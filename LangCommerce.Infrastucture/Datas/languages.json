@@ -1,0 +1,26 @@
+[
+    {
+        "Code": "en-US",
+        "DisplayName": "English (United States)",
+        "IsEnabled": true,
+        "IsDefault": true
+    },
+    {
+        "Code": "zh-CN",
+        "DisplayName": "简体中文（中国）",
+        "IsEnabled": true,
+        "IsDefault": false
+    },
+    {
+        "Code": "ms-MY",
+        "DisplayName": "Bahasa Melayu (Malaysia)",
+        "IsEnabled": false,
+        "IsDefault": false
+    },
+    {
+        "Code": "ta-MY",
+        "DisplayName": "தமிழ் (மலேசியா)",
+        "IsEnabled": false,
+        "IsDefault": false
+    }
+]
