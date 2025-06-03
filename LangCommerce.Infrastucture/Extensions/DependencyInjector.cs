@@ -32,7 +32,6 @@ public static class DependencyInjector
 
         #region Repo DI
         services.AddScoped<ILanguageRepository, LanguageRepository>();
-        services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<IProductTranslationRepository, ProductTranslationRepository>();
         #endregion

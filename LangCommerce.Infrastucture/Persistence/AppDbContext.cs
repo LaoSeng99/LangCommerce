@@ -6,7 +6,6 @@ namespace LangCommerce.Infrastucture.Persistence;
 
 internal class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {
-    internal DbSet<User> Users { get; set; }
     internal DbSet<Language> Languages { get; set; }
     internal DbSet<Product> Products { get; set; }
     internal DbSet<ProductTranslation> ProductTranslations { get; set; }

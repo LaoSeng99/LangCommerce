@@ -1,11 +1,10 @@
-﻿
-using LangCommerce.Application.Context;
+﻿using LangCommerce.Application.Context;
 using LangCommerce.Application.DTOs;
 using LangCommerce.Application.Mapping;
+using LangCommerce.Application.Services.AppSystem;
+using LangCommerce.Application.Services.Interfaces.AppSystem;
 using LangCommerce.Application.Services.Interfaces.Product;
-using LangCommerce.Application.Services.Interfaces.UserAccess;
 using LangCommerce.Application.Services.Product;
-using LangCommerce.Application.Services.UserAccess;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Filters;
 
@@ -23,8 +22,7 @@ public static class DependencyInjector
 
         services.AddScoped<UserContext>();
         services.AddScoped<IProductService, ProductService>();
-        services.AddScoped<IUserService, UserService>();
-
+        services.AddScoped<ILanguageService, LanguageService>();
 
         services.AddScoped<IProductAppService, ProductAppService>();
 

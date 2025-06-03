@@ -6,12 +6,18 @@ public class UserContextMiddleware(UserContext userContext) : IMiddleware
 {
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
     {
-        if (context.Request.Headers.TryGetValue("X-AppUser-Language", out var lang))
+        string? langCode = null;
+
+        if (context.Request.Headers.TryGetValue("X-AppUser-Language", out var headerLang))
         {
-            userContext.LanguageCode = lang.ToString().Split(',').FirstOrDefault() ?? "en-US";
+            langCode = headerLang.ToString().Split(',').FirstOrDefault();
         }
+        else if (context.Request.Cookies.TryGetValue("AppUser.Language", out var cookieLang))
+        {
+            langCode = cookieLang;
+        }
+        userContext.LanguageCode = string.IsNullOrWhiteSpace(langCode) ? "en-US" : langCode;
 
         await next(context);
     }
-
 }
